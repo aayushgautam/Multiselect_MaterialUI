@@ -5,22 +5,15 @@ import Multiselect from "./Multiselect/Multiselect"
 import "./App.css";
 import { useState } from "react";
 
-// const optionsArr = [
-//   { label: "Car", value: "car" },
-//   { label: "Bus", value: "bus" },
-//   { label: "Bi-cycle", value: "bi-cycle" },
-//   { label: "Air Plane", value: "air-plane" },
-// ];
+const optionsArr = [
+  { label: "Car", value: "car" },
+  { label: "Bus", value: "bus" },
+  { label: "Bi-cycle", value: "bi-cycle" },
+  { label: "Air Plane", value: "air-plane" },
+];
 
 function App() {
-  const [dataState, setDataState] = useState({
-    data: [
-      { label: "Car", value: "car" },
-      { label: "Bus", value: "bus" },
-      { label: "Bi-cycle", value: "bi-cycle" },
-      { label: "Air Plane", value: "air-plane" },
-    ],
-  });
+  const [dataState, setDataState] = useState([]);
 
   // const handleChange = (event) => {
   //   console.log(event.target.value);
@@ -35,26 +28,31 @@ function App() {
   //   });
   // };
 
-  
+  const handleChange = (event) => {
+    // console.log(event.target.value);
+    debugger;
+    setDataState(event.target.value);
+  };
+
   return (
     <div className="App">
       <div>
         <Simpleselect name="" value="" onChange="" />
       </div>
-      <div>
+      {/* <div>
         <Multiselectautocomplete
           name="transport"
           value={dataState.data[0]}
           options={dataState.data}
           // onChange={handleChange}
         />
-      </div>
+      </div> */}
       <div>
         <Multiselect
           name="tansport"
-          value={dataState.data[0]}
-          options={dataState.data}
-          onChange="{handleChange}"
+          value={dataState}
+          options={optionsArr}
+          onChange={handleChange}
         />
       </div>
     </div>

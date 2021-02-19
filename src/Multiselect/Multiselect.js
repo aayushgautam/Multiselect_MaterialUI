@@ -27,28 +27,22 @@ const MenuProps = {
   },
 };
 
-// const names = [
-//   "Oliver Hansen",
-//   "Van Henry",
-//   "April Tucker",
-//   "Ralph Hubbard",
-//   "Omar Alexander",
-//   "Carlos Abbott",
-//   "Miriam Wagner",
-//   "Bradley Wilkerson",
-//   "Virginia Andrews",
-//   "Kelly Snyder",
-// ];
+const names = [
+  "Oliver Hansen",
+  "Van Henry",
+  "April Tucker",
+  "Ralph Hubbard",
+  "Omar Alexander",
+  "Carlos Abbott",
+  "Miriam Wagner",
+  "Bradley Wilkerson",
+  "Virginia Andrews",
+  "Kelly Snyder",
+];
 
 const MultipleSelect = (props) => {
   const classes = useStyles();
   const theme = useTheme();
-  const [personName, setPersonName] = React.useState([]);
-
-  const handleChange = (event) => {
-    console.log(event.target.value);
-    setPersonName(event.target.value);
-  };
 
   return (
     <div>
@@ -58,18 +52,24 @@ const MultipleSelect = (props) => {
           labelId="demo-mutiple-checkbox-label"
           id="checkboxes-tags-demo"
           multiple
-          value={personName}
-          onChange={handleChange}
+          value={props.value}
+          onChange={props.onChange}
           input={<Input />}
           renderValue={(selected) => selected.join(", ")}
           MenuProps={MenuProps}
         >
           {props.options.map((name) => (
-            <MenuItem key={name} value={name}>
-              <Checkbox checked={personName.indexOf(name) > -1} />
-              <ListItemText primary={name} />
+            <MenuItem key={name.value} value={name.value}>
+              <Checkbox checked={props.value.indexOf(name.value) > -1} />
+              <ListItemText primary={name.label} />
             </MenuItem>
           ))}
+          {/* <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem> */}
         </Select>
       </FormControl>
     </div>
