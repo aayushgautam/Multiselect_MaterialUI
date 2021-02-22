@@ -1,6 +1,4 @@
 .wrapper {
-  padding: 10%;
-
   .form {
     width: 80%;
     height: auto;
@@ -16,6 +14,11 @@
     .MuiSelect-iconOutlined {
       right: 7px;
       top: -5px;
+    }
+
+    .MuiSelect-outlined.MuiSelect-outlined {
+      // padding: 0;
+      border-bottom: 0 #ffffff;
     }
 
     .MuiSelect-select:focus {

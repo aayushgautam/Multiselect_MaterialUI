@@ -2,7 +2,7 @@ import Simpleselect from "./Simpleselect/Simpleselect";
 import Multiselectautocomplete from "./Multiselectautocomplete/Multiselectautocomplete";
 import Multiselect from "./Multiselect/Multiselect";
 
-import "./App.css";
+import "./App.scss";
 import { useState } from "react";
 
 const optionsArr = [
@@ -23,10 +23,10 @@ function App() {
 
   return (
     <div className="App">
-      <div>
+      <div className="simple-select">
         <Simpleselect name="" value="" onChange="" />
       </div>
-      <div>
+      <div className="multi-select-autocomplete">
         <Multiselectautocomplete
           name="transport"
           value={optionsArr[0]}
@@ -34,7 +34,7 @@ function App() {
           // onChange={handleChange}
         />
       </div>
-      <div>
+      <div className="multi-select-checked">
         <Multiselect
           name="tansport"
           value={dataState}
