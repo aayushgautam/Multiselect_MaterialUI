@@ -1,0 +1,25 @@
+.wrapper {
+  padding: 10%;
+
+  .form {
+    width: 80%;
+    height: auto;
+    border: 1px solid #d3d3d3;
+    border-radius: 8px;
+    padding: 5px;
+
+    .MuiInputLabel-outlined {
+      z-index: 41;
+      background-color: white;
+    }
+
+    .MuiSelect-iconOutlined {
+      right: 7px;
+      top: -5px;
+    }
+
+    .MuiSelect-select:focus {
+      background-color: #ffffff;
+    }
+  }
+}
