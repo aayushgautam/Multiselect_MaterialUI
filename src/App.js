@@ -1,6 +1,6 @@
 import Simpleselect from "./Simpleselect/Simpleselect";
 import Multiselectautocomplete from "./Multiselectautocomplete/Multiselectautocomplete";
-import Multiselect from "./Multiselect/Multiselect"
+import Multiselect from "./Multiselect/Multiselect";
 
 import "./App.css";
 import { useState } from "react";
@@ -16,7 +16,7 @@ function App() {
   const [dataState, setDataState] = useState([]);
 
   const handleChange = (event) => {
-    // console.log(event.target.value);
+    console.log(event.target.value);
     // debugger;
     setDataState(event.target.value);
   };
@@ -25,6 +25,14 @@ function App() {
     <div className="App">
       <div>
         <Simpleselect name="" value="" onChange="" />
+      </div>
+      <div>
+        <Multiselectautocomplete
+          name="transport"
+          value={optionsArr[0]}
+          options={optionsArr}
+          // onChange={handleChange}
+        />
       </div>
       <div>
         <Multiselect
