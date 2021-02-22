@@ -1,6 +1,7 @@
 import Simpleselect from "./Simpleselect/Simpleselect";
 import Multiselectautocomplete from "./Multiselectautocomplete/Multiselectautocomplete";
 import Multiselect from "./Multiselect/Multiselect";
+import ChipInput from "./ChipInput/ChipInput"
 
 import "./App.scss";
 import { useState } from "react";
@@ -41,6 +42,9 @@ function App() {
           options={optionsArr}
           onChange={handleChange}
         />
+      </div>
+      <div className="chip-select">
+        <ChipInput />
       </div>
     </div>
   );
